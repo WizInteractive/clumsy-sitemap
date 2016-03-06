@@ -2,7 +2,6 @@
 
 namespace Clumsy\Sitemap;
 
-use Exception;
 use Illuminate\Support\ServiceProvider;
 
 class SitemapServiceProvider extends ServiceProvider
