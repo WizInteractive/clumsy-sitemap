@@ -1,0 +1,27 @@
+{
+    "name": "clumsy/sitemap",
+    "description": "Sitemap generator for Laravel projects",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Tomas Buteler",
+            "email": "tbuteler@gmail.com"
+        }
+    ],
+    "require": {
+        "lib-curl": "*",
+        "laravel/framework": ">=5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clumsy\\Sitemap\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
