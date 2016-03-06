@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "lib-curl": "*",
         "laravel/framework": ">=5.1"
     },
     "autoload": {
