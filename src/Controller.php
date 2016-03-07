@@ -2,6 +2,7 @@
 
 namespace Clumsy\Sitemap;
 
+use ArrayAccess;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -20,9 +21,23 @@ class Controller extends BaseController
         return abort(404);
     }
 
+    protected function isGroup($var)
+    {
+        return is_array($var) || $var instanceof ArrayAccess;
+    }
+
     protected function addLink($link, $lastmod = null, $priority = null, $changefreq = null)
     {
-        $this->sitemap->addLink($link, $lastmod, $priority, $changefreq);
+        if ($this->isGroup($link)) {
+
+            foreach ($link as $l) {
+                $this->addLink($l, $lastmod, $priority, $changefreq);
+            }
+
+        } else {
+
+            $this->sitemap->addLink($link, $lastmod, $priority, $changefreq);
+        }
     }
 
     protected function addGroup(array $group)
@@ -47,7 +62,7 @@ class Controller extends BaseController
 
         foreach ($this->groups as $group) {
 
-            if (is_array($group)) {
+            if ($this->isGroup($group)) {
                 $this->addGroup($group);
                 continue;
             }
@@ -69,7 +84,7 @@ class Controller extends BaseController
             return $this->missing();
         }
 
-        if (!is_array($this->groups) || !count($this->groups)) {
+        if (!$this->isGroup($this->groups) || !count($this->groups)) {
             return $this->missing();
         }
 
