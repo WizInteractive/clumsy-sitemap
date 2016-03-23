@@ -22,7 +22,8 @@ class SitemapServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/config.php', 'clumsy.sitemap');
+        $path = __DIR__.'/../..';
+        $this->package('clumsy/sitemap', 'clumsy/sitemap', $path);
     }
 
     /**
@@ -32,10 +33,6 @@ class SitemapServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/config.php' => config_path('clumsy/sitemap.php'),
-        ], 'config');
-
         $this->registerRoute();
     }
 
@@ -46,15 +43,16 @@ class SitemapServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [];
+        return array();
     }
 
     public function registerRoute()
     {
         $this->app['router']->get('sitemap.xml', [
-            'as'  => 'clumsy.sitemap',
-            'middleware' => $this->app['config']->get('clumsy.sitemap.middleware'),
-            'uses' => '\Clumsy\Sitemap\Controller@render',
+            'as'     => 'clumsy.sitemap',
+            'before' => $this->app['config']->get('clumsy/sitemap::config.before-filter'),
+            'after'  => $this->app['config']->get('clumsy/sitemap::config.after-filter'),
+            'uses'   => '\Clumsy\Sitemap\Controller@render',
         ]);
     }
 }

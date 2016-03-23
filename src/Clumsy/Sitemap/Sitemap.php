@@ -6,13 +6,13 @@ class Sitemap
 {
     protected $xml;
 
-    protected $schemas = [
+    protected $schemas = array(
         'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
         'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',
         'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"',
-    ];
+    );
 
-    protected $links = [];
+    protected $links = array();
 
     protected function wrap($string, $tag)
     {
@@ -33,11 +33,11 @@ class Sitemap
     {
         $xml = $this->wrap(array_get($link, 'link'), 'loc');
 
-        $optional = [
+        $optional = array(
             'lastmod',
             'changefreq',
             'priority',
-        ];
+        );
 
         foreach ($optional as $key) {
             if (array_get($link, $key)) {

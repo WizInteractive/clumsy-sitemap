@@ -10,7 +10,9 @@
 
 return [
 
-    'path' => 'Http/sitemap.php',
+    'path' => 'sitemap.php',
 
-    'middleware' => [],
+    'before-filter' => '',
+
+    'after-filter' => '',
 ];

@@ -4,6 +4,9 @@ namespace Clumsy\Sitemap;
 
 use ArrayAccess;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Response;
 
 class Controller extends BaseController
 {
@@ -18,7 +21,7 @@ class Controller extends BaseController
 
     protected function missing()
     {
-        return abort(404);
+        return App::abort(404);
     }
 
     protected function isGroup($var)
@@ -73,11 +76,11 @@ class Controller extends BaseController
 
     public function render()
     {
-        $path = app_path(config('clumsy.sitemap.path'));
+        $path = app_path(Config::get('clumsy/sitemap::config.path'));
 
         try {
 
-            $this->groups = require $path;
+            $this->groups = include $path;
 
         } catch (\Exception $e) {
 
@@ -90,6 +93,6 @@ class Controller extends BaseController
 
         $this->parseGroups();
 
-        return response($this->sitemap)->header('Content-Type', 'application/xml');
+        return Response::make($this->sitemap)->header('Content-Type', 'application/xml');
     }
 }
