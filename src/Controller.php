@@ -77,7 +77,7 @@ class Controller extends BaseController
 
         try {
 
-            $this->groups = require $path;
+            $this->groups = include $path;
 
         } catch (\Exception $e) {
 
