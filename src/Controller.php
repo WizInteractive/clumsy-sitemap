@@ -28,15 +28,12 @@ class Controller extends BaseController
 
     protected function addLink($link, $lastmod = null, $priority = null, $changefreq = null)
     {
-        if ($this->isGroup($link)) {
+        if (!$this->isGroup($link)) {
+            return $this->sitemap->addLink($link, $lastmod, $priority, $changefreq);
+        }
 
-            foreach ($link as $l) {
-                $this->addLink($l, $lastmod, $priority, $changefreq);
-            }
-
-        } else {
-
-            $this->sitemap->addLink($link, $lastmod, $priority, $changefreq);
+        foreach ($link as $l) {
+            $this->addLink($l, $lastmod, $priority, $changefreq);
         }
     }
 
