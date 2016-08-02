@@ -8,11 +8,11 @@
  |
  */
 
-return [
+return array(
 
     'path' => 'sitemap.php',
 
     'before-filter' => '',
 
     'after-filter' => '',
-];
+);
