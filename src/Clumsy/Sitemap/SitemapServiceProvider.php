@@ -48,11 +48,11 @@ class SitemapServiceProvider extends ServiceProvider
 
     public function registerRoute()
     {
-        $this->app['router']->get('sitemap.xml', [
+        $this->app['router']->get('sitemap.xml', array(
             'as'     => 'clumsy.sitemap',
             'before' => $this->app['config']->get('clumsy/sitemap::config.before-filter'),
             'after'  => $this->app['config']->get('clumsy/sitemap::config.after-filter'),
             'uses'   => '\Clumsy\Sitemap\Controller@render',
-        ]);
+        ));
     }
 }
