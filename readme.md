@@ -1,5 +1,5 @@
 # Clumsy Sitemap
-Dead simple sitemaps for Laravel projects
+Simple sitemaps for Laravel projects
 
 [![Latest Stable Version](https://poser.pugx.org/clumsy/sitemap/version)](https://packagist.org/packages/clumsy/sitemap) [![Latest Unstable Version](https://poser.pugx.org/clumsy/sitemap/v/unstable)](//packagist.org/packages/clumsy/sitemap) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/35aaffa60b424bedab0dda7d825ca43e)](https://www.codacy.com/app/tbuteler/clumsy-sitemap?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tbuteler/clumsy-sitemap&amp;utm_campaign=Badge_Grade) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c7722d5c-37e7-490b-88c8-bc04fd77434e/mini.png)](https://insight.sensiolabs.com/projects/c7722d5c-37e7-490b-88c8-bc04fd77434e)
 
@@ -84,6 +84,10 @@ You can optionally edit the path of the `sitemap.php` file which will contain yo
 ```
 php artisan php artisan vendor:publish --provider="Clumsy\Sitemap\SitemapServiceProvider" --tag=config
 ```
+
+## Legacy
+
+For Laravel 4.1 or 4.2 projects, use the `0.1` branch.
 
 ## Learn more
 Visit [sitemaps.org](http://www.sitemaps.org/protocol.html) for more info on the protocol.
