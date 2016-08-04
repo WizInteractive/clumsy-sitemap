@@ -17,7 +17,7 @@ Clumsy\Sitemap\SitemapServiceProvider::class,
 
 ## Usage
 
-The package automatically creates a route to resolve http://example.com/sitemap.xml for you. If there are no URLs to insert on your sitemap.xml or an error occurs while parsing them, a `404` error will be thrown.
+The package automatically creates a route to resolve http://example.com/sitemap.xml for you. If there are no URLs to insert on your `sitemap.xml` or an error occurs while parsing them, a `404` error will be thrown.
 
 In order to add URLs to your sitemap, add a `sitemap.php` file inside the `app/Http` folder of your Laravel app. Inside, return an array with the desired URLs. For example:
 
