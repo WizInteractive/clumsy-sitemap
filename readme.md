@@ -87,7 +87,7 @@ php artisan php artisan vendor:publish --provider="Clumsy\Sitemap\SitemapService
 
 ## Legacy
 
-For Laravel 4.1 or 4.2 projects, use the `0.1` branch.
+For Laravel 4.1 or 4.2 projects, use the `0.1` branch. The `0.3` branch introduced a new default location of the `sitemap.php` file to be more consistent with the file structure of Laravel 5.3.
 
 ## Learn more
 
