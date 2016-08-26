@@ -34,6 +34,7 @@ class SitemapServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/config.php' => config_path('clumsy/sitemap.php'),
+            __DIR__.'/stubs/sitemap.php' => base_path(config('clumsy.sitemap.path')),
         ], 'config');
 
         $this->registerRoute();
