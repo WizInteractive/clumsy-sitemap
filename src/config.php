@@ -10,7 +10,7 @@
 
 return [
 
-    'path' => 'Http/sitemap.php',
+    'path' => 'routes/sitemap.php',
 
     'middleware' => [],
 ];

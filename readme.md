@@ -17,7 +17,7 @@ Clumsy\Sitemap\SitemapServiceProvider::class,
 
 ## Usage
 
-The package automatically creates a route to resolve http://example.com/sitemap.xml for you. If there are no URLs to insert on your `sitemap.xml` or an error occurs while parsing them, a `404` error will be thrown.
+The package automatically creates a route to resolve http://example.com/sitemap.xml. If there are no URLs to insert on your `sitemap.xml` or an error occurs while parsing them, a `404` error will be thrown on that route.
 
 In order to add URLs to your sitemap, add a `sitemap.php` file inside the `app/Http` folder of your Laravel app. Inside, return an array with the desired URLs. For example:
 
@@ -29,7 +29,7 @@ return [
 ];
 ```
 
-Will yield the following entry in your sitemap.xml:
+This will yield the following entry in your `sitemap.xml`:
 ```
 ...
 <url>
@@ -90,4 +90,5 @@ php artisan php artisan vendor:publish --provider="Clumsy\Sitemap\SitemapService
 For Laravel 4.1 or 4.2 projects, use the `0.1` branch.
 
 ## Learn more
+
 Visit [sitemaps.org](http://www.sitemaps.org/protocol.html) for more info on the protocol.

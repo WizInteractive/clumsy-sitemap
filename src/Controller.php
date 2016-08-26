@@ -70,7 +70,7 @@ class Controller extends BaseController
 
     public function render()
     {
-        $path = app_path(config('clumsy.sitemap.path'));
+        $path = base_path(config('clumsy.sitemap.path'));
 
         try {
 
