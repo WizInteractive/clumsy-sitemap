@@ -82,7 +82,7 @@ return [
 
 You can optionally edit the path of the `sitemap.php` file which will contain your URLs and attach middleware to the sitemap route by publishing the default config to your local app:
 ```
-php artisan php artisan vendor:publish --provider="Clumsy\Sitemap\SitemapServiceProvider" --tag=config
+php artisan vendor:publish --provider="Clumsy\Sitemap\SitemapServiceProvider" --tag=config
 ```
 
 ## Legacy
