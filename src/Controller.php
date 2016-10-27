@@ -3,17 +3,21 @@
 namespace Clumsy\Sitemap;
 
 use ArrayAccess;
+use Illuminate\Foundation\Application;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
     protected $sitemap;
 
+    protected $app;
+
     protected $groups;
 
-    public function __construct()
+    public function __construct(Application $app)
     {
         $this->sitemap = new Sitemap;
+        $this->app = $app;
     }
 
     protected function missing()
@@ -77,7 +81,8 @@ class Controller extends BaseController
             $this->groups = include $path;
 
         } catch (\Exception $e) {
-
+            // Log the exception before returning a 404
+            $this->app->log->error($e);
             return $this->missing();
         }
 

@@ -5,12 +5,12 @@ Simple sitemaps for Laravel projects
 
 ## Installing
 
-- Use Composer to install:
+Use Composer to install:
 ```
 composer require clumsy/sitemap
 ```
 
-- In the `config/app.php` file, add this to the `providers` key:
+In the `config/app.php` file, add this to the `providers` key:
 ```php
 Clumsy\Sitemap\SitemapServiceProvider::class,
 ```
