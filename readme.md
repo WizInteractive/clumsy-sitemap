@@ -12,7 +12,7 @@ composer require clumsy/sitemap
 
 In the `config/app.php` file, add this to the `providers` key:
 ```php
-Clumsy\Sitemap\SitemapServiceProvider::class,
+Wizclumsy\Sitemap\SitemapServiceProvider::class,
 ```
 
 ## Usage
@@ -82,7 +82,7 @@ return [
 
 You can optionally edit the path of the `sitemap.php` file which will contain your URLs and attach middleware to the sitemap route by publishing the default config to your local app:
 ```
-php artisan vendor:publish --provider="Clumsy\Sitemap\SitemapServiceProvider" --tag=config
+php artisan vendor:publish --provider="Wizclumsy\Sitemap\SitemapServiceProvider" --tag=config
 ```
 
 ## Legacy

@@ -1,6 +1,6 @@
 <?php
 
-namespace Clumsy\Sitemap;
+namespace Wizclumsy\Sitemap;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -55,7 +55,7 @@ class SitemapServiceProvider extends ServiceProvider
         $this->app['router']->get('sitemap.xml', [
             'as'  => 'clumsy.sitemap',
             'middleware' => $this->app['config']->get('clumsy.sitemap.middleware'),
-            'uses' => '\Clumsy\Sitemap\Controller@render',
+            'uses' => '\Wizclumsy\Sitemap\Controller@render',
         ]);
     }
 }

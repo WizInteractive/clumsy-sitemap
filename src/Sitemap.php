@@ -1,6 +1,6 @@
 <?php
 
-namespace Clumsy\Sitemap;
+namespace Wizclumsy\Sitemap;
 
 class Sitemap
 {
