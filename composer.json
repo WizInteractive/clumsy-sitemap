@@ -1,5 +1,5 @@
 {
-    "name": "clumsy/sitemap",
+    "name": "wizclumsy/sitemap",
     "description": "Sitemap generator for Laravel projects",
     "license": "MIT",
     "authors": [
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Clumsy\\Sitemap\\": "src/"
+            "Wizclumsy\\Sitemap\\": "src/"
         }
     },
     "extra": {
